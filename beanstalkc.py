@@ -147,7 +147,7 @@ class Connection(object):
             return self._interact_job(command,
                                       ['RESERVED'],
                                       ['DEADLINE_SOON', 'TIMED_OUT'])
-        except CommandFailed, (_, status, results):
+        except CommandFailed:
             if status == 'TIMED_OUT':
                 return None
             elif status == 'DEADLINE_SOON':
