@@ -122,7 +122,7 @@ class Connection(object):
     def _interact_peek(self, command):
         try:
             return self._interact_job(command, ['FOUND'], ['NOT_FOUND'], False)
-        except CommandFailed as (_, _status, _results):
+        except CommandFailed:
             return None
 
     # -- public interface --
